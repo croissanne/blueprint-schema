@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://osbuild.org/schemas/v1/image.json",
+
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "distribution"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "description": "Version of the blueprint schema, has to be 1.",
+      "minimum": 1,
+      "maximum": 1
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "distribution": {
+      "type": "string",
+      "description": "distribution this blueprint applies to"
+    },
+
+    "repositories": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "description": "Points to a list repository IDs in the content service",
+        "format": "uuid"
+      }
+    },
+
+    "packages": {
+      "$ref": "file://customisations/packages.json"
+    },
+
+    "filesystem": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "mountpoint",
+          "size"
+        ],
+        "properties": {
+          "mountpoint": {
+            "type": "string"
+          },
+          "size": {
+
+            "description": "size in bytes"
+          }
+        }
+      }
+    }
+  }
+}

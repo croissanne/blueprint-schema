@@ -1,0 +1,7 @@
+(undo-tree-save-format-version . 1)
+"dce0ef23f21a6582a5ae7185db7f207d633c91f7"
+[nil nil nil nil (25800 55003 643468 416000) 0 nil]
+([nil nil ((#("console.redhat.com./api/image-builder" 0 37 (fontified t face font-lock-string-face)) . 82) (undo-tree-id0 . -37) (undo-tree-id1 . -37) (undo-tree-id2 . -37) (undo-tree-id3 . -37) (t 25785 33137 574419 191000)) nil (25800 55003 643467 607000) 0 nil])
+([nil nil ((82 . 93)) nil (25800 55003 643449 35000) 0 nil])
+([nil current ((94 . 102) (t 25800 55003 645343 279000)) nil (25800 55014 983146 154000) 0 nil])
+nil
