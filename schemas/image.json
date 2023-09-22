@@ -1,7 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://osbuild.org/schemas/v1/image.json",
-
+  "$id": "https://console.redhat.com./api/image-builder/v1/image.json",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -25,21 +24,12 @@
       "type": "string",
       "description": "distribution this blueprint applies to"
     },
-
     "repositories": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "description": "Points to a list repository IDs in the content service",
-        "format": "uuid"
-      }
+      "$ref": "file://customisations/repositories.json"
     },
-
     "packages": {
       "$ref": "file://customisations/packages.json"
     },
-
     "filesystem": {
       "type": "array",
       "items": {
@@ -53,7 +43,6 @@
             "type": "string"
           },
           "size": {
-
             "description": "size in bytes"
           }
         }

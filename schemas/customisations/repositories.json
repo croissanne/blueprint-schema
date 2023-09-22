@@ -1,0 +1,59 @@
+{
+  "oneOf": [
+    {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "description": "Points to a list repository IDs in the content service",
+        "format": "uuid"
+      }
+    },
+    {
+      "type": "array",
+      "uniqueItems": false,
+      "items": {
+        "type": "object",
+        "description": "Repository",
+        "additionalProperties": false,
+        "required": [
+          "rhsm"
+        ],
+        "properties": {
+          "rhsm": {
+            "type": "boolean"
+          },
+          "baseurl": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://cdn.redhat.com/content/dist/rhel8/8/x86_64/baseos/os/"
+          },
+          "mirrorlist": {
+            "type": "string",
+            "format": "uri",
+            "example": "http://mirrorlist.centos.org/?release=8-stream&arch=aarch64&repo=BaseOS"
+          },
+          "metalink": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://mirrors.fedoraproject.org/metalink?repo=fedora-32&arch=x86_64"
+          },
+          "gpgkey": {
+            "type": "string"
+          },
+          "check_gpg": {
+            "type": "boolean"
+          },
+          "check_repo_gpg": {
+            "type": "boolean",
+            "default": false,
+            "description": "Enables gpg verification of the repository metadata\n"
+          },
+          "ignore_ssl": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  ]
+}
