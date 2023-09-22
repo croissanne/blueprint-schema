@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://console.redhat.com./api/image-builder/v1/image.json",
+  "$id": "https://osbuild.org/schemas/v0/blueprint.json",
   "type": "object",
   "additionalProperties": false,
   "required": [

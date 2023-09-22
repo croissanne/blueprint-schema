@@ -23,7 +23,7 @@ def compile(schema):
 
 
 def main():
-    schema = load_json("image.json")
+    schema = load_json("blueprint.json")
 
     for k, v in schema.items():
         if isinstance(v, dict):
